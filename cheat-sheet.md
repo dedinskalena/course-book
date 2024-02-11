@@ -9,5 +9,13 @@
     *add body parser
     *add routes module
 4. Install and config hendlebars
-    *add views folder
+    *add views folder with resources
+    *add main layout and add home page
+    *add parcials folder
+5. Install and config database
+    *install mongoose and setup db connection
+    *add User model
+6. Authentication
+    
+
 
