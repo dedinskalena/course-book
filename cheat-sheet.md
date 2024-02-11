@@ -16,6 +16,6 @@
     *install mongoose and setup db connection
     *add User model
 6. Authentication
-    
+    *fix nav links
 
 
