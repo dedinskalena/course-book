@@ -21,6 +21,14 @@
     *add register page(controller and view)
     *fix register form
     *add post register action,add authService
+    *install bcrypt and hash password
+    *check comfirm password
+7.Login
+    *add login page and fix login form
+    *add login post action
+    *validate user and password
+    *generate token
+
     
 
 
