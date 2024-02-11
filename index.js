@@ -15,8 +15,6 @@ app.use(routes)
 mongoose.connect('mongodb://127.0.0.1:27017/course-book')
 mongoose.connection.on('connected',()=>console.log('DB is connected'))
 
-app.get('/',(req,res)=>{
-    res.render('home')
-})
+ 
 
 app.listen(5000,console.log('Server listening on port 5000'))
