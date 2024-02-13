@@ -1,11 +1,21 @@
 const bcrypt=require('bcrypt')
 const User=require('../models/User')
+const jwt=require('../lib/jsonwebtoken')
+ 
+const {SECRET}=require('../config')
 
-exports.register=(userData)=>{
-    if(userData.rePasword!==userData.password){
+exports.register=async (userData)=>{
+    if(userData.rePassword!==userData.password){
         throw new Error('Password missmatch')
     }
-    return User.create(userData)
+    const user=await User.findOne({email:userData.email})
+    if(user){
+        throw new Error('User already exists')
+    }
+    const createdUser=await User.create(userData)
+    const token =await generateToken(createdUser)
+     
+    return token
 }
 
 exports.login=async ({email,password})=>{
@@ -20,6 +30,16 @@ exports.login=async ({email,password})=>{
         throw new Error('Email or Password is invalid')
      }
     //ganerate token
+   const token= await generateToken(user)
+   return token
+}
 
-    //return token
+function generateToken(user){
+    const payload={
+        username:user.username,
+        email:user.email,
+        id:user._id
+    }
+    return jwt.sign(payload,SECRET,{expiresIn:'2h'})
+    
 }

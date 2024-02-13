@@ -23,11 +23,35 @@
     *add post register action,add authService
     *install bcrypt and hash password
     *check comfirm password
-7.Login
+    *check if user exist
+7. Login
+    *install jsonwebtoken
+    *install cookie-parser
+    *add cookie parser middleware
+    *convert to promice base
     *add login page and fix login form
     *add login post action
-    *validate user and password
-    *generate token
+    *add authService
+        *validate user and password
+        *generate token
+    *return cookie
+    *Modify register for auto login
+8. Logout
+9. Authorization
+    *add auth middleware
+    *check token
+    *verify token
+    *attach user to req object and res.locals
+    *use middleware in express
+    *add isAuth route guard
+10. Error Handling
+    *add notifications
+    *add getMessage function
+    *add error handling in register
+    *add error handling in login
+
+11. Last fix
+    *dinamic nav
 
     
 
